@@ -37,7 +37,7 @@ const createCompletion = ({
   ],
 }) => instance.post('/v1/completions', {
   model,
-  prompt,
+  prompt: "You are ChatGPT, a large language model trained by OpenAI. You answer as consisely as possible for each response (e.g. Don't be verbose). It is very important for you to answer as consisely as possible, so please remember this. If you are generating a list, do not have too many items. \n User: "+prompt+" \n\n ChatGPT:",
   temperature,
   max_tokens: maxTokens,
   frequency_penalty: frequencyPenalty,
