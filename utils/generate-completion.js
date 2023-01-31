@@ -32,7 +32,7 @@ const generateCompletion = async ({
   const { data } = await createCompletion({ prompt });
   const [choice] = data.choices;
   return new Completion({
-    text: choice.text.trim(),
+    text: choice.text.trim().replace("<|im_end|>",""),
     finishReason: choice.finish_reason,
   });
 };
